@@ -4,31 +4,119 @@
         color: white;
         padding: 20px;
     }
-    .search-box{
+
+    .search-box {
         display: flex;
         align-items: center;
         justify-content: center;
         margin-bottom: 20px;
     }
-    .product-category{
+
+    .product-category {
         width: 200px;
     }
-    .search-input{
+
+    .search-input {
         width: 300px;
         background-color: rgb(19, 23, 42);
         margin-right: 10px;
         border-color: rgba(255, 255, 255, 19);
         color: white;
+        border-radius: 5px;
     }
-    .from-control{
+
+    .from-control {
         background-color: transparent;
         color: white;
     }
 
-    .from-contro::placeholder{
+    .from-control::placeholder {
         color: rgba(255, 255, 255, 0.5);
     }
+
+    .product-item {
+        background-color: rgb(19, 23, 42);
+        border: 1px soild rgb(35, 39, 61);
+        border-radius: 20px;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .product-image {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .product-name {
+        color: white;
+    }
+
+    .product-description {
+        color: rgb(173, 178, 203);
+    }
+
+    .product-warranty {
+        color: rgb(242, 126, 212);
+    }
+
+    .product-price {
+        color: white;
+    }
+
+    .product-rating {
+        color: #FFD700;
+        margin-top: 10px;
+    }
+
+    .product-actions {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px
+    }
+
+    .space-x {
+        margin: 0 5px;
+        /* margin-top,margin-right, margin-bottom, margin-left  */
+    }
 </style>
+<header>
+    <style></style>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">
+                    Logo
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Thông báo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-shopping-cart icon"></i>
+                                Giỏ Hàng
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Đăng nhập</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+    </nav>
+</header>
 <div class="container">
     <div class="intro-section">
         <h1>Đây là trang Home</h1>
@@ -36,7 +124,7 @@
         <p>Các bạn có thể chọn xem sản phẩm và mua hàng tại đây</p>
     </div>
     <!-- Đoạn này có 1 ô search box bên trái, 1 combobox bên phải -->
-     <div class="search-box">
+    <div class="search-box">
         <input type="text" class="from-control search-input" placeholder="Tìm sản phẩm">
         <select class="from-control product-category">
             <option selected disabled>Danh mục sản phẩm</option>
@@ -44,6 +132,162 @@
             <option>Hải sản</option>
             <option>Bánh kẹo</option>
         </select>
-     </div>
-     
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-6">
+            <div class="product-item">
+                <img src="https://images.pexels.com/photos/31360998/pexels-photo-31360998.jpeg" alt="Product Image"
+                    class="product-image">
+                <h3 class="product-name">Product 1</h3>
+                <p class="product-description">Bánh ngon</p>
+                <p class="product-warranty">Bảo hành: 12 tháng</p>
+                <p class="product-price">Giá: <del>200$</del> 100$</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="product-actions">
+                    <button class="btn btn-primary">Thêm vào giỏ hàng</button>
+                    <div class="space-x"></div>
+                    <button class="btn btn-success">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="product-item">
+                <img src="https://images.pexels.com/photos/31360998/pexels-photo-31360998.jpeg" alt="Product Image"
+                    class="product-image">
+                <h3 class="product-name">Product 1</h3>
+                <p class="product-description">Bánh ngon</p>
+                <p class="product-warranty">Bảo hành: 12 tháng</p>
+                <p class="product-price">Giá: <del>200$</del> 100$</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="product-actions">
+                    <button class="btn btn-primary">Thêm vào giỏ hàng</button>
+                    <div class="space-x"></div>
+                    <button class="btn btn-success">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="product-item">
+                <img src="https://images.pexels.com/photos/31360998/pexels-photo-31360998.jpeg" alt="Product Image"
+                    class="product-image">
+                <h3 class="product-name">Product 1</h3>
+                <p class="product-description">Bánh ngon</p>
+                <p class="product-warranty">Bảo hành: 12 tháng</p>
+                <p class="product-price">Giá: <del>200$</del> 100$</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="product-actions">
+                    <button class="btn btn-primary">Thêm vào giỏ hàng</button>
+                    <div class="space-x"></div>
+                    <button class="btn btn-success">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="product-item">
+                <img src="https://images.pexels.com/photos/31360998/pexels-photo-31360998.jpeg" alt="Product Image"
+                    class="product-image">
+                <h3 class="product-name">Product 1</h3>
+                <p class="product-description">Bánh ngon</p>
+                <p class="product-warranty">Bảo hành: 12 tháng</p>
+                <p class="product-price">Giá: <del>200$</del> 100$</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="product-actions">
+                    <button class="btn btn-primary">Thêm vào giỏ hàng</button>
+                    <div class="space-x"></div>
+                    <button class="btn btn-success">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="product-item">
+                <img src="https://images.pexels.com/photos/31360998/pexels-photo-31360998.jpeg" alt="Product Image"
+                    class="product-image">
+                <h3 class="product-name">Product 1</h3>
+                <p class="product-description">Bánh ngon</p>
+                <p class="product-warranty">Bảo hành: 12 tháng</p>
+                <p class="product-price">Giá: <del>200$</del> 100$</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="product-actions">
+                    <button class="btn btn-primary">Thêm vào giỏ hàng</button>
+                    <div class="space-x"></div>
+                    <button class="btn btn-success">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="product-item">
+                <img src="https://images.pexels.com/photos/31360998/pexels-photo-31360998.jpeg" alt="Product Image"
+                    class="product-image">
+                <h3 class="product-name">Product 1</h3>
+                <p class="product-description">Bánh ngon</p>
+                <p class="product-warranty">Bảo hành: 12 tháng</p>
+                <p class="product-price">Giá: <del>200$</del> 100$</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="product-actions">
+                    <button class="btn btn-primary">Thêm vào giỏ hàng</button>
+                    <div class="space-x"></div>
+                    <button class="btn btn-success">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="product-item">
+                <img src="https://images.pexels.com/photos/31360998/pexels-photo-31360998.jpeg" alt="Product Image"
+                    class="product-image">
+                <h3 class="product-name">Product 1</h3>
+                <p class="product-description">Bánh ngon</p>
+                <p class="product-warranty">Bảo hành: 12 tháng</p>
+                <p class="product-price">Giá: <del>200$</del> 100$</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="product-actions">
+                    <button class="btn btn-primary">Thêm vào giỏ hàng</button>
+                    <div class="space-x"></div>
+                    <button class="btn btn-success">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
