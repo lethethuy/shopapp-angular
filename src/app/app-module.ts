@@ -5,10 +5,12 @@ import { Order } from './order/order';
 import { DetailProduct } from './detail-product/detail-product';
 import { Header } from './header/header';
 import { Footer } from './footer/footer';
+import { OrderConfirm } from './order-confirm/order-confirm';
+import { Login } from './login/login';
 
 @NgModule({
   declarations: [  
-    Home, Order, DetailProduct, Header, Footer
+    Home, Order, DetailProduct, Header, Footer, OrderConfirm, Login
   ],
   imports: [
     BrowserModule
@@ -18,10 +20,12 @@ import { Footer } from './footer/footer';
   ],
   // Màn hình khởi chạy đầu tiên
   bootstrap: [
-    // Home
-   // Order
-  //  Header
-  DetailProduct
+    // Home,
+  //  Order,
+  //  Header,
+  // DetailProduct,
+  // OrderConfirm,
+  Login
   ]
 })
 export class AppModule { }
