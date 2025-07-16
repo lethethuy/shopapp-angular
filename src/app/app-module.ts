@@ -7,13 +7,16 @@ import { Header } from './header/header';
 import { Footer } from './footer/footer';
 import { OrderConfirm } from './order-confirm/order-confirm';
 import { Login } from './login/login';
+import { Register } from './register/register';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [  
-    Home, Order, DetailProduct, Header, Footer, OrderConfirm, Login
+    Home, Order, DetailProduct, Header, Footer, OrderConfirm, Login, Register
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
@@ -25,7 +28,8 @@ import { Login } from './login/login';
   //  Header,
   // DetailProduct,
   // OrderConfirm,
-  Login
+  // Login
+  Register
   ]
 })
 export class AppModule { }
