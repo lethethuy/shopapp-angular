@@ -9,6 +9,8 @@ import { OrderConfirm } from './order-confirm/order-confirm';
 import { Login } from './login/login';
 import { Register } from './register/register';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [  
@@ -16,7 +18,8 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
