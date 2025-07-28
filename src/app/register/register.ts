@@ -66,19 +66,14 @@ export class Register {
       .subscribe({
         next: (response: any) => {
           debugger
-          // Xử lý kết quả trả về khi đăng ký thành công
-          if (response && (response.status === 200 || response.status === 201)) {
-            // Đăng ký thành công, chuyển sang màn hình login
-            this.router.navigate(['/login']);
-          } else {
-            // Xử lý trường hợp đăng ký không thành công nếu cần
-          }
+          this.router.navigate(['/login']);
         },
         complete: () => {
           debugger
         },
         error: (error: any) => {
           // Xử lý lỗi nếu có
+          alert(`Cannot register, error: ${error.error} `)
           debugger
           console.error('Đăng ký không thành công:', error);
         }
