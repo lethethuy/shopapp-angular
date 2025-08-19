@@ -1,7 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { User } from '../service/user';
+import { RegisterDTO } from '../../dtos/user/register.dto';
 
 
 @Component({
@@ -21,7 +22,7 @@ export class Register {
   isAccepted: boolean;
   dateOfBirth: Date;
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(private router: Router, private UserService:User) {
     this.phone = '';
     this.password = '';
     this.retypePassword = '';
@@ -30,8 +31,8 @@ export class Register {
     this.isAccepted = false;
     this.dateOfBirth = new Date();
     this.dateOfBirth.setFullYear(this.dateOfBirth.getFullYear() - 18);
-
     // Inject 
+
   }
   onPhoneChange() {
     console.log(`Phone type: ${this.phone}`)
@@ -47,7 +48,7 @@ export class Register {
       `dateOfBirth: ${this.dateOfBirth}`
     // alert(message)
     const apiUrl = "http://localhost:8080/api/v1/users/register"
-    const registerData = {
+    const registerDTO:RegisterDTO = {
       "full_name": this.fullName,
       "phone_number": this.phone,
       "address": this.address,
@@ -59,11 +60,8 @@ export class Register {
       "role_id": 1
     }
 
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json'
-    });
-    this.http.post(apiUrl, registerData, { headers })
-      .subscribe({
+    this.UserService.register(registerDTO).subscribe(
+      {
         next: (response: any) => {
           debugger
           this.router.navigate(['/login']);
@@ -77,9 +75,10 @@ export class Register {
           debugger
           console.error('Đăng ký không thành công:', error);
         }
-      });
-
-
+      }
+    )
+    // this.http.post(apiUrl, registerData, { headers })
+    //   .subscribe();
   }
 
   // check password trung nhau
