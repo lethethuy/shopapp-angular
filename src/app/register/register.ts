@@ -14,7 +14,7 @@ import { RegisterDTO } from '../../dtos/user/register.dto';
 export class Register {
   @ViewChild('registerForm') registerForm!: NgForm;
   // Khai báo các biến tương ứng với các trường dữ liệu trong form
-  phone: string;
+  phoneNumber: string;
   password: string;
   retypePassword: string;
   fullName: string;
@@ -23,7 +23,7 @@ export class Register {
   dateOfBirth: Date;
 
   constructor(private router: Router, private UserService:User) {
-    this.phone = '';
+    this.phoneNumber = '';
     this.password = '';
     this.retypePassword = '';
     this.fullName = '';
@@ -34,12 +34,13 @@ export class Register {
     // Inject 
 
   }
-  onPhoneChange() {
-    console.log(`Phone type: ${this.phone}`)
+  onPhoneNumberChange() {
+    console.log(`Phone type: ${this.phoneNumber}`)
 
   }
   register() {
-    const message = `phone: ${this.phone}` +
+  // Tạo message debug (hiện tại bị comment)
+    const message = `phone: ${this.phoneNumber}` +
       `password: ${this.password}` +
       `retypePassword: ${this.retypePassword}` +
       `fullName: ${this.fullName}` +
@@ -50,7 +51,7 @@ export class Register {
     const apiUrl = "http://localhost:8080/api/v1/users/register"
     const registerDTO:RegisterDTO = {
       "full_name": this.fullName,
-      "phone_number": this.phone,
+      "phone_number": this.phoneNumber,
       "address": this.address,
       "password": this.password,
       "retype_password": this.retypePassword,
@@ -61,18 +62,24 @@ export class Register {
     }
 
     this.UserService.register(registerDTO).subscribe(
+         // Xử lý khi thành công
       {
         next: (response: any) => {
           debugger
           this.router.navigate(['/login']);
         },
+          // Xử lý khi hoàn thành
         complete: () => {
           debugger
         },
+          // Xử lý khi có lỗi
         error: (error: any) => {
           // Xử lý lỗi nếu có
-          alert(`Cannot register, error: ${error.error} `)
-          debugger
+          if (error.status === 0) {
+            alert('Không thể kết nối đến server. Vui lòng kiểm tra kết nối mạng hoặc liên hệ admin.');
+          } else {
+            alert(`Lỗi đăng ký: ${error.error || error.message || 'Không xác định'}`);
+          }
           console.error('Đăng ký không thành công:', error);
         }
       }
